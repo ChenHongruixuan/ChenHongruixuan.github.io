@@ -453,7 +453,7 @@ img.proj_thumb {
 }
 
 table {
-    border: 0px solid black;
+    border: none;
     border-collapse: collapse;
 }
 
