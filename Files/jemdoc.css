@@ -462,7 +462,7 @@ td {
     padding-left: 0.5em;
     padding-right: 0.5em;
     text-align: left;
-    border: 0px solid gray;
+    border: none;
 }
 
 table + table {
