@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<link rel="stylesheet" href="./Files/style.css" />
+<link rel="shortcut icon" href="./Files/icon.jpg" />
+<title>Life — Hongruixuan Chen</title>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="./index.html" class="navbar-brand">Hongruixuan Chen</a>
+    <ul class="navbar-links">
+      <li><a href="./publications.html">Publications</a></li>
+      <li><a href="./life.html" class="active">Life</a></li>
+      <li><a href="./Files/CHEN Hongruixuan_CV.pdf" target="_blank">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <a class="back-link" href="./index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to Home
+  </a>
+
+  <div class="page-header">
+    <h1>Life</h1>
+    <p>A glimpse beyond the research papers.</p>
+  </div>
+
+  <!-- Photos & Travel -->
+  <div class="life-section">
+    <h2 class="life-section-title">Photos &amp; Travel</h2>
+    <p style="font-size:14px; color:var(--text-muted); margin-bottom:16px;">Places I have been fortunate to visit — Japan, Switzerland, and beyond.</p>
+    <div class="life-grid">
+      <div class="life-placeholder">Photo coming soon</div>
+      <div class="life-placeholder">Photo coming soon</div>
+      <div class="life-placeholder">Photo coming soon</div>
+      <div class="life-placeholder">Photo coming soon</div>
+      <div class="life-placeholder">Photo coming soon</div>
+      <div class="life-placeholder">Photo coming soon</div>
+    </div>
+  </div>
+
+  <!-- Interests & Hobbies -->
+  <div class="life-section">
+    <h2 class="life-section-title">Interests &amp; Hobbies</h2>
+    <ul class="hobby-list">
+      <li class="hobby-item">Coming soon</li>
+    </ul>
+  </div>
+
+  <!-- Book & Film Recommendations -->
+  <div class="life-section">
+    <h2 class="life-section-title">Books &amp; Films</h2>
+    <p style="font-size:14px; color:var(--text-muted); margin-bottom:16px;">Some works that have shaped the way I think.</p>
+    <ul class="book-list">
+      <li class="book-item">Coming soon</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Hongruixuan Chen &nbsp;·&nbsp; The University of Tokyo</p>
+  </footer>
+
+</div>
+
+<!-- Back to top -->
+<div id="back_top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+
+<script>
+var btn = document.getElementById('back_top');
+window.addEventListener('scroll', function() {
+  if ((document.documentElement.scrollTop || document.body.scrollTop) > 400) {
+    btn.style.display = 'flex';
+  } else {
+    btn.style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
