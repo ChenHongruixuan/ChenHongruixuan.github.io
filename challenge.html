@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="BRIGHT, Building Damage, Instance Segmentation, Multimodal, Remote Sensing, Challenge, Competition">
+<meta name="description" content="Bright Challenge: Advancing All-Weather Building Damage Mapping to Instance-Level">
+<link rel="stylesheet" href="./Files/style.css" />
+<link rel="shortcut icon" href="./Files/icon.jpg" />
+<title>BRIGHT Challenge — Multimodal Building Damage Mapping</title>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="./index.html" class="navbar-brand">Hongruixuan Chen</a>
+    <ul class="navbar-links">
+      <li><a href="./research.html">Research</a></li>
+      <li><a href="https://scholar.google.com/citations?user=XOk4Cf0AAAAJ&hl=en" target="_blank">Publications</a></li>
+      <li><a href="./challenge.html" class="active">Challenge</a></li>
+      <li><a href="./Files/CHEN Hongruixuan_CV.pdf" target="_blank">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Back link -->
+  <!-- <a class="back-link" href="./index.html">
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to Homepage
+  </a> -->
+
+  <!-- Challenge Hero -->
+  <div class="challenge-hero">
+    <div class="challenge-hero-tag">Open Competition &nbsp;·&nbsp; CVPR 2026</div>
+    <h1>BRIGHT Challenge: Advancing All-Weather Building Damage Mapping to Instance-Level</h1>
+    <!-- <p>An international competition on instance-level building damage mapping<br>using very-high-resolution multimodal remote sensing imagery after disasters.</p> -->
+    <div class="challenge-links">
+      <a class="challenge-btn challenge-btn-primary" href="#dataset">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Dataset
+      </a>
+      <a class="challenge-btn challenge-btn-primary" href="#baseline">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        Baseline Code
+      </a>
+      <a class="challenge-btn" href="#submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Submit Results
+      </a>
+      <a class="challenge-btn" href="#dates">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Important Dates
+      </a>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <section class="section">
+    <h2 class="section-title">Overview</h2>
+
+    <!-- <div class="info-box">
+      <strong>Challenge hosted at:</strong> MONTI at CVPR 2026 &nbsp;·&nbsp;
+      <strong>Submission system:</strong> <a href="#submit">CodaLab / [PLATFORM PLACEHOLDER]</a> &nbsp;·&nbsp;
+      <strong>Contact:</strong> <a href="mailto:Qschrx@gmail.com">Qschrx@gmail.com</a>
+    </div> -->
+
+    <p>Natural and man-made disasters cause severe damage to urban infrastructure worldwide. Rapid and accurate mapping of building damage is essential for effective disaster response, resource allocation, and recovery planning. While semantic-level (pixel-wise) damage mapping has been extensively studied, <strong>instance-level</strong> damage mapping — which identifies and assesses each individual building separately — remains a critical yet underexplored challenge.</p>
+
+    <p>The <strong>BRIGHT Challenge</strong> invites participants to develop methods for <strong>instance-level building damage mapping</strong> using the <a href="https://essd.copernicus.org/articles/17/6217/2025/essd-17-6217-2025.html" target="_blank">BRIGHT dataset</a>, a globally distributed multimodal benchmark featuring paired very-high-resolution (VHR) optical and synthetic aperture radar (SAR) imagery collected after real-world disaster events. The goal is to simultaneously <em>detect</em>, <em>delineate</em>, and <em>classify</em> each damaged building at the instance level.</p>
+
+    <p>This challenge is part of <a href="https://sites.google.com/view/monti2026/home" target="_blank">Monitoring the World Through an Imperfect Lens (MONTI)</a> in conjunction with CVPR 2026 Conference and aims at advancing geoscience and remote sensing research through open benchmarks and competitive evaluation.</p>
+  </section>
+
+  <!-- Task Description -->
+  <section class="section">
+    <h2 class="section-title">Task Description</h2>
+
+    <p>Given a pair of pre-disaster optical and post-disaster SAR images, participants must produce an <strong>instance-level building damage map</strong> that:</p>
+    <ul style="font-size:14px; padding-left:20px; line-height:1.85; color:var(--text)">
+      <li>Detects and delineates each individual building footprint as a distinct instance.</li>
+      <li>Assigns each detected building a <strong>damage level</strong> according to the standard classification: <em>Intact</em>, <em>Damage</em>, and <em>Destroyed</em>.</li>
+      <li>Works under the <strong>all-weather</strong> constraint: methods should be capable of handling both optical and SAR inputs or their multimodal combination, addressing cases where optical imagery is unavailable due to cloud cover or night-time conditions.</li>
+    </ul>
+
+    <div class="info-box" style="margin-top:18px">
+      <strong>Evaluation Metric:</strong> The primary metric is <strong>mAP</strong> on the three damage levels. 
+    </div>
+  </section>
+
+  <!-- Dataset -->
+  <section class="section" id="dataset">
+    <h2 class="section-title">Dataset</h2>
+
+    <p>This challenge is based on the <strong>BRIGHT</strong> dataset, published in <a href="https://essd.copernicus.org/articles/17/6217/2025/essd-17-6217-2025.html" target="_blank">Earth System Science Data (ESSD), 2025</a>.</p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-number">14</div>
+        <div class="stat-label">Disaster Events</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Disaster types</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Damage Levels</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Modalities</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">VHR</div>
+        <div class="stat-label">Resolution (&lt; 1 m)</div>
+      </div>
+ 
+    </div>
+
+    <p>The BRIGHT dataset covers multiple disaster types (earthquakes, floods, hurricanes, wildfires, etc.) across diverse geographic regions. Each scene provides:</p>
+    <ul style="font-size:14px; padding-left:20px; line-height:1.85; color:var(--text)">
+      <li><strong>Pre-event optical imagery</strong> (VHR, sub-meter resolution)</li>
+      <li><strong>post-event SAR imagery</strong> (co-registered with optical data)</li>
+      <li><strong>Instance-level building annotations</strong> with per-instance damage level labels</li>
+    </ul>
+
+    <h3 style="font-family:system-ui,-apple-system,sans-serif; font-size:15px; font-weight:600; margin:24px 0 10px; color:var(--text)">Data Splits</h3>
+    <div style="overflow-x:auto">
+      <table style="width:100%; border-collapse:collapse; font-size:14px; font-family:system-ui,-apple-system,sans-serif">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border)">
+            <th style="padding:10px 14px; text-align:left; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700">Split</th>
+            <th style="padding:10px 14px; text-align:left; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700">Scenes</th>
+            <th style="padding:10px 14px; text-align:left; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700">Building Instances</th>
+            <th style="padding:10px 14px; text-align:left; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700">Labels Provided</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 14px; font-weight:600; color:var(--text)">Training</td>
+            <td style="padding:10px 14px; color:var(--text-muted)">[N_TRAIN]</td>
+            <td style="padding:10px 14px; color:var(--text-muted)">[N_INSTANCES_TRAIN]</td>
+            <td style="padding:10px 14px"><span class="badge">Yes</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 14px; font-weight:600; color:var(--text)">Validation</td>
+            <td style="padding:10px 14px; color:var(--text-muted)">[N_VAL]</td>
+            <td style="padding:10px 14px; color:var(--text-muted)">[N_INSTANCES_VAL]</td>
+            <td style="padding:10px 14px"><span class="badge badge-hot">Withheld</span></td>
+          </tr>
+          <tr>
+            <td style="padding:10px 14px; font-weight:600; color:var(--text)">Test</td>
+            <td style="padding:10px 14px; color:var(--text-muted)">[N_TEST]</td>
+            <td style="padding:10px 14px; color:var(--text-muted)">[N_INSTANCES_TEST]</td>
+            <td style="padding:10px 14px"><span class="badge badge-hot">Withheld</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:10px" id="baseline">
+      <a class="challenge-btn challenge-btn-primary" href="https://github.com/ChenHongruixuan/BRIGHT" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Dataset (Zenodo)
+      </a>
+      <a class="challenge-btn challenge-btn-primary" href="https://github.com/ChenHongruixuan/BRIGHT" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Dataset (HuggingFace)
+      </a>
+      <a class="challenge-btn challenge-btn-primary" href="[BASELINE_CODE_URL_PLACEHOLDER]" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        Baseline Code (GitHub)
+      </a>
+      <!-- <a class="challenge-btn" href="https://essd.copernicus.org/articles/17/6217/2025/essd-17-6217-2025.html" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Dataset Paper (ESSD)
+      </a> -->
+    </div>
+  </section>
+
+  <!-- Important Dates -->
+  <section class="section" id="dates">
+    <h2 class="section-title">Important Dates</h2>
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px">All deadlines are at <strong>23:59 AoE</strong> (Anywhere on Earth, UTC−12).</p>
+
+    <ul class="timeline">
+      <li class="timeline-item">
+        <span class="timeline-date">[DATE]</span>
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <strong>Challenge Launch &amp; Data Release</strong><br>
+          <span>Training and validation data become available for download.</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">[DATE]</span>
+        <span class="timeline-dot timeline-dot-muted"></span>
+        <div class="timeline-content">
+          <strong>Development Phase Opens</strong><br>
+          <span>Submission system opens; participants may submit results on the validation set.</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">[DATE]</span>
+        <span class="timeline-dot timeline-dot-muted"></span>
+        <div class="timeline-content">
+          <strong>Test Data Release</strong><br>
+          <span>Test images (without labels) are released for final evaluation.</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">[DATE]</span>
+        <span class="timeline-dot timeline-dot-muted"></span>
+        <div class="timeline-content">
+          <strong>Final Submission Deadline</strong><br>
+          <span>Deadline for final predictions on the test set.</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">[DATE]</span>
+        <span class="timeline-dot timeline-dot-muted"></span>
+        <div class="timeline-content">
+          <strong>Code &amp; Technical Report Submission</strong><br>
+          <span>Top-ranked teams must submit their code and a short technical report.</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">[DATE]</span>
+        <span class="timeline-dot timeline-dot-muted"></span>
+        <div class="timeline-content">
+          <strong>Results Announcement</strong><br>
+          <span>Final leaderboard and winner notification.</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">[DATE]</span>
+        <span class="timeline-dot timeline-dot-muted"></span>
+        <div class="timeline-content">
+          <strong>Workshop / Awards Ceremony</strong><br>
+          <span>[CONFERENCE / WORKSHOP PLACEHOLDER]</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Rules -->
+  <section class="section">
+    <h2 class="section-title">Rules</h2>
+    <ul style="font-size:14px; padding-left:20px; line-height:1.85; color:var(--text)">
+      <li>Participation is open to individuals and teams worldwide. No registration fee is required.</li>
+      <li>Teams may use the BRIGHT training set and any <strong>publicly available</strong> pre-trained models or auxiliary data. <strong>Any additional data used must be declared in the technical report</strong>.</li>
+      <li>The <strong>test labels are never released</strong> during the competition period.</li>
+      <li>Each team may submit at most <strong>10 submissions per day</strong> during the development phase.</li>
+      <li>Each team can make <strong>a total of 10 submissions</strong> in the test phase.</li>
+      <li>Teams finishing in the top ranks must provide reproducible code. Failure to do so will result in disqualification.</li>
+      <!-- <li>The use of the instance labels and test data for any purpose other than this challenge is prohibited until the competition closes.</li> -->
+      <li>Organizers reserve the right to disqualify submissions that violate these rules or show signs of test-label leakage.</li>
+    </ul>
+  </section>
+
+  <!-- Submission -->
+  <section class="section" id="submit">
+    <h2 class="section-title">Result Submission</h2>
+
+    <div class="info-box">
+      <strong>Submission Platform:</strong> Results are submitted via <a href="[SUBMISSION_URL_PLACEHOLDER]" target="_blank">[PLATFORM — e.g., CodaBench]</a>. Please register and follow the starter kit instructions for formatting your predictions.
+    </div>
+
+    <p>Predictions should be submitted as <strong>COCO-format JSON</strong> following the format specification in the starter kit. Detailed submission instructions and example scripts are provided in the baseline repository.</p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:16px">
+      <a class="challenge-btn challenge-btn-primary" href="[SUBMISSION_URL_PLACEHOLDER]" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Submit on CodaBench
+      </a>
+      <a class="challenge-btn" href="[STARTER_KIT_URL_PLACEHOLDER]" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Starter Kit
+      </a>
+    </div>
+  </section>
+
+  <!-- Prizes -->
+  <section class="section">
+    <h2 class="section-title">Awards &amp; Prizes</h2>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-number" style="color:#b45309">🥇</div>
+        <div class="stat-label">1st Place</div>
+        <div style="font-family:system-ui,-apple-system,sans-serif; font-size:13px; font-weight:600; color:var(--text); margin-top:6px">[PRIZE PLACEHOLDER]</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" style="color:#6b7280">🥈</div>
+        <div class="stat-label">2nd Place</div>
+        <div style="font-family:system-ui,-apple-system,sans-serif; font-size:13px; font-weight:600; color:var(--text); margin-top:6px">[PRIZE PLACEHOLDER]</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" style="color:#92400e">🥉</div>
+        <div class="stat-label">3rd Place</div>
+        <div style="font-family:system-ui,-apple-system,sans-serif; font-size:13px; font-weight:600; color:var(--text); margin-top:6px">[PRIZE PLACEHOLDER]</div>
+      </div>
+    </div>
+
+    <p style="font-size:14px; color:var(--text-muted)">Top-ranked teams will be invited to present their solutions at MONTI of CVPR 2026.</p>
+  </section>
+
+  <!-- Organizers -->
+  <section class="section">
+    <h2 class="section-title">Organizers</h2>
+
+    <div class="organizer-grid">
+
+      <div class="organizer-card">
+        <img class="organizer-avatar" src="./Files/CHRX_2021.jpg" alt="Hongruixuan Chen" />
+        <p class="organizer-name"><a href="./index.html" style="color:var(--text)">Hongruixuan Chen</a></p>
+        <p class="organizer-affil">The University of Tokyo & RIKEN AIP</p>
+      </div>
+
+      <div class="organizer-card">
+        <img class="organizer-avatar" src="./Files/SJ.jpg" alt="Jian Song" />
+        <p class="organizer-name"><a href="https://jtrneo.github.io/" target="_blank" style="color:var(--text)">Jian Song</a></p>
+        <p class="organizer-affil">RIKEN AIP</p>
+      </div>
+        
+      <div class="organizer-card">
+        <img class="organizer-avatar" src="./Files/WJJ.jpg" alt="Junjue Wang" />
+        <p class="organizer-name"><a href="https://junjuewang.top/" target="_blank" style="color:var(--text)">Junjue Wang</a></p>
+        <p class="organizer-affil">The University of Tokyo</p>
+      </div>
+
+      <div class="organizer-card">
+        <img class="organizer-avatar" src="./Files/XWH.jpg" alt="Weihao Xuan" />
+        <p class="organizer-name"><a href="https://weihaoxuan.com/" target="_blank" style="color:var(--text)">Weihao Xuan</a></p>
+        <p class="organizer-affil">The University of Tokyo & RIKEN AIP</p>
+      </div>
+      
+      <div class="organizer-card">
+        <div class="organizer-avatar-placeholder">CBB</div>
+        <p class="organizer-name"><a href="https://scholar.google.com/citations?user=Ng45cnYAAAAJ&hl=en" target="_blank" style="color:var(--text)">Clifford Broni-Bediako</a></p>
+        <p class="organizer-affil">RIKEN AIP</p>
+      </div>
+
+      <div class="organizer-card">
+        <div class="organizer-avatar-placeholder">JX</div>
+        <p class="organizer-name"><a href="https://scholar.google.com/citations?user=n1aKdTkAAAAJ&hl=en" target="_blank" style="color:var(--text)">Junshi Xia</a></p>
+        <p class="organizer-affil">RIKEN AIP</p>
+      </div>
+      
+      <!-- <div class="organizer-card">
+        <div class="organizer-avatar-placeholder">KS</div>
+        <p class="organizer-name"><a href="https://scholar.google.com/citations?user=FZuNgqIAAAAJ&hl=en" target="_blank" style="color:var(--text)">Konrad Schindler</a></p>
+        <p class="organizer-affil">ETH Zurich</p>
+      </div> -->
+
+      <div class="organizer-card">
+        <div class="organizer-avatar-placeholder">NY</div>
+        <p class="organizer-name"><a href="https://naotoyokoya.com/" target="_blank" style="color:var(--text)">Naoto Yokoya</a></p>
+        <p class="organizer-affil">The University of Tokyo & RIKEN AIP</p>
+      </div>
+
+    </div>
+
+    <p style="font-size:14px; color:var(--text-muted); margin-top:24px">
+      For inquiries, please contact: <a href="mailto:Qschrx@gmail.com">Qschrx@gmail.com</a>
+    </p>
+  </section>
+
+  <!-- Reference -->
+  <section class="section">
+    <h2 class="section-title">Citation</h2>
+    <p style="font-size:14px; color:var(--text-muted)">If you use the BRIGHT dataset or this challenge in your research, please kindly cite:</p>
+    <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; font-family:'Courier New', Courier, monospace; font-size:12.5px; line-height:1.7; color:var(--text); overflow-x:auto; white-space:pre">@article{chen2025bright,
+  title   = {\textsc{Bright}: A globally distributed multimodal building damage assessment dataset with very-high-resolution for all-weather disaster response},
+  author  = {Chen, Hongruixuan and Song, Jian and Dietrich, Oliver and Broni-Bediako, Clifford and Xuan, Weikang and Wang, Junjue and Shao, Xuanlong and Wei, Yinhe and Xia, Junshi and Lan, Cuiling and Schindler, Konrad and Yokoya, Naoto},
+  journal = {Earth System Science Data},
+  volume  = {17},
+  pages   = {6217--6243},
+  year    = {2025},
+  doi     = {10.5194/essd-17-6217-2025}
+}</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>BRIGHT Challenge &nbsp;·&nbsp; Hongruixuan Chen, The University of Tokyo</p>
+  </footer>
+
+</div>
+
+<!-- Back to top -->
+<div id="back_top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+
+<script>
+var btn = document.getElementById('back_top');
+window.addEventListener('scroll', function() {
+  if ((document.documentElement.scrollTop || document.body.scrollTop) > 400) {
+    btn.style.display = 'flex';
+  } else {
+    btn.style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
