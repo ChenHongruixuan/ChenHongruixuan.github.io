@@ -84,7 +84,8 @@
     <ul style="font-size:14px; padding-left:20px; line-height:1.85; color:var(--text)">
       <li>Detects and delineates each individual building footprint as a distinct instance.</li>
       <li>Assigns each detected building a <strong>damage level</strong> according to the standard classification: <em>Intact</em>, <em>Damage</em>, and <em>Destroyed</em>.</li>
-      <li>Works under the <strong>all-weather</strong> constraint: methods should be capable of handling both optical and SAR inputs or their multimodal combination, addressing cases where optical imagery is unavailable due to cloud cover or night-time conditions.</li>
+      <li>Works under the <strong>all-weather</strong> constraint: methods should be capable of handling both pre-event optical and post-event SAR inputs.</li>
+      <li>Generalizes across disaster events under a <strong>cross-event</strong> evaluation protocol: models are trained on one set of disaster events and tested on entirely unseen events, assessing their ability to transfer to new disasters without event-specific fine-tuning. </li>
     </ul>
 
     <div class="info-box" style="margin-top:18px">
@@ -144,7 +145,7 @@
         <tbody>
           <tr style="border-bottom:1px solid var(--border)">
             <td style="padding:10px 14px; font-weight:600; color:var(--text)">Training / Validation</td>
-            <td style="padding:10px 14px; color:var(--text-muted)">3029</td>
+            <td style="padding:10px 14px; color:var(--text-muted)">3,029</td>
             <td style="padding:10px 14px; color:var(--text-muted)">244,976</td>
             <td style="padding:10px 14px"><span class="badge">Yes</span></td>
           </tr>
@@ -269,13 +270,13 @@
     <h2 class="section-title">Result Submission</h2>
 
     <div class="info-box">
-      <strong>Submission Platform:</strong> Results are submitted via <a href="https://www.codabench.org/competitions/15129/" target="_blank">CodaBench</a>. Please register and follow the baseline code for formatting your predictions.
+      <strong>Submission Platform:</strong> Results are submitted via <a href="https://www.codabench.org/competitions/15134/" target="_blank">CodaBench</a>. Please register and follow the baseline code for formatting your predictions.
     </div>
 
     <p>Predictions should be submitted as <strong>COCO-format JSON</strong> following the format specification in the baseline code. Detailed submission instructions and example scripts are provided in the baseline repository.</p>
 
     <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:16px">
-      <a class="challenge-btn challenge-btn-primary" href="https://www.codabench.org/competitions/15129/" target="_blank">
+      <a class="challenge-btn challenge-btn-primary" href="https://www.codabench.org/competitions/15134/" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         Submit on CodaBench
       </a>
