@@ -136,26 +136,26 @@
         <thead>
           <tr style="border-bottom: 2px solid var(--border)">
             <th style="padding:10px 14px; text-align:left; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700">Split</th>
-            <th style="padding:10px 14px; text-align:left; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700">Scenes</th>
+            <th style="padding:10px 14px; text-align:left; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700">Tiles</th>
             <th style="padding:10px 14px; text-align:left; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700">Building Instances</th>
             <th style="padding:10px 14px; text-align:left; color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700">Labels Provided</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid var(--border)">
-            <td style="padding:10px 14px; font-weight:600; color:var(--text)">Training</td>
-            <td style="padding:10px 14px; color:var(--text-muted)">[N_TRAIN]</td>
-            <td style="padding:10px 14px; color:var(--text-muted)">[N_INSTANCES_TRAIN]</td>
+            <td style="padding:10px 14px; font-weight:600; color:var(--text)">Training / Validation</td>
+            <td style="padding:10px 14px; color:var(--text-muted)">3029</td>
+            <td style="padding:10px 14px; color:var(--text-muted)">244,976</td>
             <td style="padding:10px 14px"><span class="badge">Yes</span></td>
           </tr>
           <tr style="border-bottom:1px solid var(--border)">
-            <td style="padding:10px 14px; font-weight:600; color:var(--text)">Validation</td>
-            <td style="padding:10px 14px; color:var(--text-muted)">[N_VAL]</td>
+            <td style="padding:10px 14px; font-weight:600; color:var(--text)">Holdout</td>
+            <td style="padding:10px 14px; color:var(--text-muted)">366</td>
             <td style="padding:10px 14px; color:var(--text-muted)">[N_INSTANCES_VAL]</td>
             <td style="padding:10px 14px"><span class="badge badge-hot">Withheld</span></td>
           </tr>
           <tr>
-            <td style="padding:10px 14px; font-weight:600; color:var(--text)">Test</td>
+            <td style="padding:10px 14px; font-weight:600; color:var(--text)">Cross-Event Test</td>
             <td style="padding:10px 14px; color:var(--text-muted)">[N_TEST]</td>
             <td style="padding:10px 14px; color:var(--text-muted)">[N_INSTANCES_TEST]</td>
             <td style="padding:10px 14px"><span class="badge badge-hot">Withheld</span></td>
@@ -173,7 +173,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Dataset (HuggingFace)
       </a>
-      <a class="challenge-btn challenge-btn-primary" href="[BASELINE_CODE_URL_PLACEHOLDER]" target="_blank">
+      <a class="challenge-btn challenge-btn-primary" href="https://github.com/ChenHongruixuan/BRIGHT/tree/master/cvprw26" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         Baseline Code (GitHub)
       </a>
@@ -269,20 +269,17 @@
     <h2 class="section-title">Result Submission</h2>
 
     <div class="info-box">
-      <strong>Submission Platform:</strong> Results are submitted via <a href="[SUBMISSION_URL_PLACEHOLDER]" target="_blank">[PLATFORM — e.g., CodaBench]</a>. Please register and follow the starter kit instructions for formatting your predictions.
+      <strong>Submission Platform:</strong> Results are submitted via <a href="[SUBMISSION_URL_PLACEHOLDER]" target="_blank">[PLATFORM — e.g., CodaBench]</a>. Please register and follow the baseline code for formatting your predictions.
     </div>
 
-    <p>Predictions should be submitted as <strong>COCO-format JSON</strong> following the format specification in the starter kit. Detailed submission instructions and example scripts are provided in the baseline repository.</p>
+    <p>Predictions should be submitted as <strong>COCO-format JSON</strong> following the format specification in the baseline code. Detailed submission instructions and example scripts are provided in the baseline repository.</p>
 
     <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:16px">
       <a class="challenge-btn challenge-btn-primary" href="[SUBMISSION_URL_PLACEHOLDER]" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         Submit on CodaBench
       </a>
-      <a class="challenge-btn" href="[STARTER_KIT_URL_PLACEHOLDER]" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Starter Kit
-      </a>
+   
     </div>
   </section>
 
@@ -342,13 +339,13 @@
       </div>
       
       <div class="organizer-card">
-        <div class="organizer-avatar-placeholder">CBB</div>
+        <img class="organizer-avatar" src="./Files/CBB.jpg" alt="Clifford Broni-Bediako" />
         <p class="organizer-name"><a href="https://scholar.google.com/citations?user=Ng45cnYAAAAJ&hl=en" target="_blank" style="color:var(--text)">Clifford Broni-Bediako</a></p>
         <p class="organizer-affil">RIKEN AIP</p>
       </div>
 
       <div class="organizer-card">
-        <div class="organizer-avatar-placeholder">JX</div>
+        <img class="organizer-avatar" src="./Files/XJS.jpg" alt="Junshi Xia" />
         <p class="organizer-name"><a href="https://scholar.google.com/citations?user=n1aKdTkAAAAJ&hl=en" target="_blank" style="color:var(--text)">Junshi Xia</a></p>
         <p class="organizer-affil">RIKEN AIP</p>
       </div>
