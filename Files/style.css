@@ -740,7 +740,7 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
 .timeline::before {
   content: '';
   position: absolute;
-  left: 90px;
+  left: 125px;
   top: 8px;
   bottom: 8px;
   width: 1px;
@@ -763,7 +763,7 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   border-radius: 3px;
   padding: 3px 8px;
   white-space: nowrap;
-  min-width: 70px;
+  width: 100px;
   text-align: center;
   flex-shrink: 0;
   margin-top: 1px;
@@ -909,7 +909,7 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   .navbar { padding: 0 16px; }
   .challenge-hero { padding: 28px 18px 24px; }
   .challenge-hero h1 { font-size: 20px; }
-  .timeline::before { left: 74px; }
+  .timeline::before { left: 125px; }
   .organizer-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
   .stats-row { gap: 10px; }
 }
