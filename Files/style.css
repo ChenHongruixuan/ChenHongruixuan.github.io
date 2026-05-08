@@ -298,6 +298,43 @@ a:hover { color: var(--accent-hover); text-decoration: underline; }
   white-space: nowrap;
 }
 
+.news-archive {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.news-archive summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.news-archive summary::-webkit-details-marker { display: none; }
+.news-archive summary::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+  margin-top: -3px;
+}
+.news-archive[open] summary {
+  margin-bottom: 12px;
+}
+.news-archive[open] summary::after {
+  transform: rotate(-135deg);
+  margin-top: 3px;
+}
+
 /* =========================================================
    Publication Cards
    ========================================================= */
