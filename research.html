@@ -6,7 +6,7 @@
 <meta name="robots" content="index, follow" />
 <link rel="stylesheet" href="./Files/style.css" />
 <link rel="shortcut icon" href="./Files/icon.jpg" />
-<title>Research — Hongruixuan Chen</title>
+<title>Research - Hongruixuan Chen</title>
 </head>
 
 <body>
@@ -18,8 +18,14 @@
     <ul class="navbar-links">
       <li><a href="./research.html" class="active">Research</a></li>
       <li><a href="https://scholar.google.com/citations?user=XOk4Cf0AAAAJ&hl=en" target="_blank">Publications</a></li>
-      <li><a href="./challenge.html">Challenge</a></li>
-      <!-- <li><a href="./life.html">Life</a></li> -->
+      <li class="navbar-dropdown">
+        <a href="./challenge.html" class="navbar-dropdown-trigger">Challenge</a>
+        <div class="navbar-dropdown-menu" role="menu">
+          <a href="./challenge.html" role="menuitem">BRIGHT Challenge</a>
+          <a href="https://www.grss-ieee.org/technical-committees/image-analysis-and-data-fusion/?tab=data-fusion-contest" target="_blank" role="menuitem">IEEE GRSS Data Fusion Contest</a>
+          <a href="https://cliffbb.github.io/OEM-Fewshot-Challenge/" target="_blank" role="menuitem">OpenEarthMap Few-Shot Challenge</a>
+        </div>
+      </li>
       <li><a href="./Files/CHEN Hongruixuan_CV.pdf" target="_blank">CV</a></li>
     </ul>
   </div>
@@ -30,197 +36,643 @@
   <!-- Page Header -->
   <div class="page-header">
     <h1>Research</h1>
-    <p>My research sits at the intersection of machine learning and Earth observation, with the goal of making AI systems more capable, efficient, and accessible for monitoring and understanding our planet. My work spans three interconnected directions below.</p>
+    <p>
+      I work on machine learning and computer vision for Earth observation. The work groups into four directions, summarised below: how to interpret data acquired by sensors that observe the Earth in different ways, how to design models that fit the structure of EO data, how to train such models with limited annotation, and how foundation models can extend EO capabilities to broader geoscience tasks. Disaster response is one of the recurring motivations, going back to a year I spent as a trainee at the UN Satellite Centre (UNOSAT), but the same methods also support urban planning, land-cover mapping, environmental monitoring, and other applications.
+    </p>
   </div>
 
-  <!-- ── Research Area 1 ── -->
-  <section class="research-area" id="eo-data">
-    <h2 class="research-area-title">Understanding Multi-Sensor EO Data</h2>
-    <p class="research-area-desc">
-      Modern Earth observation relies on a diverse fleet of sensors, each capturing complementary aspects of the Earth's surface. A central challenge is how to jointly interpret heterogeneous data streams that differ in modality, resolution, and acquisition geometry. 
-    </p>
-    <p class="research-rep-label">Representative Publications</p>
-    <div class="pub-list">
-
-      <!-- Paper 1 — fill in -->
-      <div class="pub-card">
-        <!-- <img class="pub-img" src="Files/IM4CD.png" alt="IM4CD" /> -->
-        <div class="pub-body">
-          <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0924271626000559" target="_blank">Multimodal remote sensing change detection: An image matching perspective</a></p>
-          <p class="pub-authors"><strong>H. Chen</strong>, C. Lan, J. Song, D. Ibañez, J. Xia, K. Schindler, N. Yokoya</p>
-          <p class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2026</p>
-          <div class="pub-links">
-            <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S0924271626000559" target="_blank">Paper</a>
-            <a class="pub-link" href="https://github.com/ChenHongruixuan/BRIGHT" target="_blank">Data</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Paper 2 — fill in -->
-      <div class="pub-card">
-        <!-- <img class="pub-img" src="Files/FDMCD.png" alt="FDMCD" /> -->
-        <div class="pub-body">
-          <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S092427162300062X" target="_blank">Fourier domain structural relationship analysis for unsupervised multimodal change detection</a></p>
-          <p class="pub-authors"><strong>H. Chen</strong>, N. Yokoya, and M. Chini</p>
-          <p class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2023</p>
-          <div class="pub-badges"><span class="badge">ESI Highly Cited Paper</span></div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S092427162300062X" target="_blank">Paper</a>
-            <a class="pub-link" href="https://github.com/ChenHongruixuan/FDMCD" target="_blank">Code</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub-card">
-        <!-- <img class="pub-img" src="Files/FDMCD.png" alt="FDMCD" /> -->
-        <div class="pub-body">
-          <p class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/9984688" target="_blank">Unsupervised multimodal change detection based on structural relationship graph representation learning</a></p>
-          <p class="pub-authors"><strong>H. Chen</strong>, N. Yokoya, C. Wu, B. Du</p>
-          <p class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing, 2022</p>
-          <!-- <div class="pub-badges"><span class="badge">ESI Highly Cited Paper</span></div> -->
-          <div class="pub-links">
-            <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/9984688" target="_blank">Paper</a>
-            <a class="pub-link" href="https://github.com/ChenHongruixuan/SRGCAE" target="_blank">Code</a>
-          </div>
-        </div>
-      </div>
-
+  <!-- Pillar nav: compact buttons + preview strip -->
+  <div class="pillar-nav">
+    <div class="pillar-row" role="tablist" aria-label="Research pillars">
+      <button class="pillar-btn pillar-btn-all" data-pillar="all" aria-pressed="true">All</button>
+      <button class="pillar-btn" data-pillar="p1" aria-pressed="false">
+        <span class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="0.5"/><rect x="3" y="10" width="4" height="4" rx="0.5"/><rect x="17" y="10" width="4" height="4" rx="0.5"/><line x1="7" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="17" y2="12"/><line x1="12" y1="15" x2="12" y2="20"/><circle cx="12" cy="20.7" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <span>Data</span>
+      </button>
+      <button class="pillar-btn" data-pillar="p2" aria-pressed="false">
+        <span class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="6" y="10" width="12" height="4" rx="1"/><rect x="9" y="16" width="6" height="4" rx="1"/></svg></span>
+        <span>Architecture</span>
+      </button>
+      <button class="pillar-btn" data-pillar="p3" aria-pressed="false">
+        <span class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 L13.42 20.58 a2 2 0 0 1 -2.83 0 L2 12 V2 h10 l8.59 8.59 a2 2 0 0 1 0 2.82 z"/><circle cx="7" cy="7" r="1.4" fill="currentColor" stroke="none"/></svg></span>
+        <span>Labels</span>
+      </button>
+      <button class="pillar-btn" data-pillar="pf" aria-pressed="false">
+        <span class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L13.5 10.5 L21 12 L13.5 13.5 L12 21 L10.5 13.5 L3 12 L10.5 10.5 Z"/></svg></span>
+        <span>Foundation</span>
+      </button>
+      <span class="pillar-meta" id="filter-meta"></span>
     </div>
-  </section>
 
-  <!-- ── Research Area 2 ── -->
-  <section class="research-area" id="ai-architecture">
-    <h2 class="research-area-title">Designing EO-specialized Architecture</h2>
-    <p class="research-area-desc">
-      General-purpose vision architectures are not always well-suited to the unique characteristics of EO data. EO-specialized architectures are purpose-built for change detection, multitemporal analysis, and geospatial understanding. The goal is to close the gap between the structure of the problem and the inductive biases of the model.
-    </p>
-    <p class="research-rep-label">Representative Publications</p>
-    <div class="pub-list">
+    <div class="pillar-preview" id="pillar-preview" aria-live="polite" hidden>
+      <div class="preview-pane" data-pane="p1" hidden>
+        <h3 class="preview-title" data-pillar-mark="p1">Multi-sensor EO data interpretation</h3>
+        <p class="preview-text">Optical, SAR, maps, and time series each capture the Earth's surface in different ways. I study what they share and where they diverge, so models stay reliable when one sensor is unavailable.</p>
+      </div>
+      <div class="preview-pane" data-pane="p2" hidden>
+        <h3 class="preview-title" data-pillar-mark="p2">Architectures shaped for EO</h3>
+        <p class="preview-text">Standard vision models miss what makes EO data different: multi-temporal, multi-spectral, very large in spatial extent. I design networks that build these properties into their structure.</p>
+      </div>
+      <div class="preview-pane" data-pane="p3" hidden>
+        <h3 class="preview-title" data-pillar-mark="p3">Training with fewer labels</h3>
+        <p class="preview-text">Pixel-level annotation is expensive and slow. I work on open benchmarks, label-efficient learning, and synthetic data, so models can be trained faster and used in regions or scenarios where labels are missing.</p>
+      </div>
+      <div class="preview-pane" data-pane="pf" hidden>
+        <h3 class="preview-title" data-pillar-mark="pf">Foundation models for geoscience</h3>
+        <p class="preview-text">A more recent thread looks at foundation models and vision-language systems for geoscience, and whether they can move EO from producing maps to supporting higher-level reasoning across domains such as land-cover mapping, urban planning, disaster response, and environmental monitoring.</p>
+      </div>
+    </div>
+  </div>
 
-      <!-- Paper 1 — fill in -->
-      <div class="pub-card">
-        <!-- <img class="pub-img" src="Files/ChangeMamba.png" alt="ChangeMamba" /> -->
-        <div class="pub-body">
-          <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10565926" target="_blank">ChangeMamba: Remote sensing change detection with spatio-temporal state space model</a></p>
-          <p class="pub-authors"><strong>H. Chen</strong>, J. Song, C. Han, J. Xia, and N. Yokoya</p>
-          <p class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing (<strong>TGRS</strong>), 2024</p>
-          <div class="pub-badges"><span class="badge badge-hot">ESI Hot Paper</span><span class="badge">ESI Highly Cited Paper</span></div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://ieeexplore.ieee.org/document/10565926" target="_blank">Paper</a>
-            <a class="pub-link" href="https://github.com/ChenHongruixuan/MambaCD" target="_blank">Code</a>
-            <a class="pub-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7219970529498214400/" target="_blank">News</a>
-          </div>
+  <!-- Publication list -->
+  <div class="pub-list" id="pub-list">
+
+    <!-- ============== 2026 ============== -->
+
+    <div class="pub-card" data-pillars="p1 pf">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://arxiv.org/abs/2603.17528" target="_blank">MM-OVSeg: Multimodal optical-SAR fusion for open-vocabulary segmentation in remote sensing</a></p>
+        <p class="pub-authors">Y. Wei, A. Xiao, <strong>H. Chen</strong>, J. Xia, N. Yokoya</p>
+        <p class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p1">data</span><span class="pillar-badge" data-pillar="pf">foundation</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2603.17528" target="_blank">Paper</a>
         </div>
       </div>
+    </div>
 
-      <!-- Paper 2 — fill in -->
-      <div class="pub-card">
-        <div class="pub-body">
-          <p class="pub-title"><a href="#">ObjFormer: Learning land-cover changes from paired OSM data and optical high-resolution imagery via object-guided Transformer</a></p>
-          <p class="pub-authors"><strong>H. Chen</strong>, C. Lan, J. Song, C. Broni-Bediako, J. Xia, N. Yokoya</p>
-          <p class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing (<strong>TGRS</strong>), 2024</p>
-          <div class="pub-badges"><span class="badge">ESI Highly Cited Paper</span></div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10551264/" target="_blank">Paper</a>
-            <a class="pub-link" href="https://github.com/ChenHongruixuan/ObjFormer" target="_blank">Code</a>
-            <a class="pub-link" href="https://github.com/ChenHongruixuan/ObjFormer" target="_blank">Datset</a>
-          </div>
+    <div class="pub-card" data-pillars="p2 p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://arxiv.org/abs/2507.04678" target="_blank">ChangeBridge: Spatiotemporal image generation with multimodal controls for remote sensing</a></p>
+        <p class="pub-authors">Z. Zhao, C. Wu, X. Cao, D. Wang, <strong>H. Chen</strong>, D. Tang, L. Zhang, Z. Zheng</p>
+        <p class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p2">architecture</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2507.04678" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/zhenghuizhao/ChangeBridge" target="_blank">Code</a>
         </div>
       </div>
+    </div>
 
-      <div class="pub-card">
-      <!-- <img class="pub-img" src="Files/KPCAMNet.png" alt="KPCAMNet" /> -->
+    <div class="pub-card" data-pillars="pf">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://arxiv.org/abs/2604.08896" target="_blank">GeoMMBench and GeoMMAgent: Toward expert-level multimodal intelligence in geoscience and remote sensing</a></p>
+        <p class="pub-authors">A. Xiao, S. Cheng, Y. Xu, Y. Ren, <strong>H. Chen</strong>, N. Yokoya</p>
+        <p class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026</p>
+        <div class="pub-badges"><span class="badge badge-hot">Highlight</span><span class="pillar-badge" data-pillar="pf">foundation</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2604.08896" target="_blank">Paper</a>
+          <a class="pub-link" href="https://geo-mm-agi.github.io/" target="_blank">Project</a>
+        </div>
+      </div>
+    </div>
+
+        <div class="pub-card" data-pillars="p1">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0924271626000559" target="_blank">Multimodal remote sensing change detection: An image matching perspective</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>, C. Lan, J. Song, D. Iba&ntilde;ez, J. Xia, K. Schindler, N. Yokoya</p>
+        <p class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2026</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p1">data</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S0924271626000559" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p2 p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0924271625004678" target="_blank">Enhancing monocular height estimation via sparse LiDAR-guided correction</a></p>
+        <p class="pub-authors">J. Song, <strong>H. Chen</strong>, N. Yokoya</p>
+        <p class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2026</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p2">architecture</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S0924271625004678" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p2 pf">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/11316817" target="_blank">CrossEarth: Geospatial vision foundation model for domain-generalizable remote sensing semantic segmentation</a></p>
+        <p class="pub-authors">Z. Gong, Z. Wei, D. Wang, X. Ma, <strong>H. Chen</strong>, Y. Jia, Y. Deng, Z. Ji, X. Zhu, N. Yokoya, J. Zhang, B. Du, L. Zhang</p>
+        <p class="pub-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI</strong>), 2026</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p2">architecture</span><span class="pillar-badge" data-pillar="pf">foundation</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/11316817" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/Cuzyoung/CrossEarth" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="pf">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://linkinghub.elsevier.com/retrieve/pii/S1569843226000415" target="_blank">CityVLM: Towards sustainable urban development via multi-view coordinated vision-language model</a></p>
+        <p class="pub-authors">J. Wang, W. Xuan, H. Qi, Z. Chen, <strong>H. Chen</strong>, Z. Zheng, J. Xia, Y. Zhong, N. Yokoya</p>
+        <p class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2026</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="pf">foundation</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://linkinghub.elsevier.com/retrieve/pii/S1569843226000415" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p2 p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S1569843226000415" target="_blank">DreamCD: A change-label-free framework for change detection via a weakly conditional semantic diffusion model in optical VHR imagery</a></p>
+        <p class="pub-authors">K. Tang, Z. Zheng, <strong>H. Chen</strong>, X. Chen, J. Chen</p>
+        <p class="pub-venue">International Journal of Applied Earth Observation and Geoinformation (<strong>JAG</strong>), 2026</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p2">architecture</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S1569843226000415" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3 pf">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/11140807" target="_blank">SARLANG-1M: A benchmark for vision-language modeling in SAR image understanding</a></p>
+        <p class="pub-authors">Y. Wei, A. Xiao, Y. Ren, Y. Zhu, <strong>H. Chen</strong>, J. Xia, N. Yokoya</p>
+        <p class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing (<strong>TGRS</strong>), 2026</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p3">labels</span><span class="pillar-badge" data-pillar="pf">foundation</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/11140807" target="_blank">Paper</a>
+          <a class="pub-link" href="https://huggingface.co/datasets/Yongxiang/SARLANG-1M" target="_blank">Dataset</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="pf">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0025326X25011890" target="_blank">Multi-label classification for multi-temporal, multi-spatial coral reef condition monitoring using vision foundation model with adapter learning</a></p>
+        <p class="pub-authors">X. Shao*, <strong>H. Chen</strong>*, F. Zhao, K. Magson, J. Chen, P. Li, J. Wang, J. Sasaki</p>
+        <p class="pub-venue">Marine Pollution Bulletin, 2026</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="pf">foundation</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S0025326X25011890" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+<!-- ============== 2025 ============== -->
+
+    <div class="pub-card" data-pillars="p1 p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://essd.copernicus.org/articles/17/6217/2025/essd-17-6217-2025.html" target="_blank">BRIGHT: A globally distributed multimodal building damage assessment dataset with very-high-resolution for all-weather disaster response</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>, J. Song, O. Dietrich, C. W. Xuan, J. Wang, X. Shao, Y. Wei, J. Xia, C. Lan, K. Schindler, N. Yokoya</p>
+        <p class="pub-venue">Earth System Science Data (<strong>ESSD</strong>), 2025</p>
+        <div class="pub-badges"><span class="badge badge-hot">ESI Hot Paper</span><span class="badge">ESI Highly Cited</span><span class="badge">DFC 2025</span><span class="pillar-badge" data-pillar="p1">data</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://essd.copernicus.org/articles/17/6217/2025/essd-17-6217-2025.html" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/ChenHongruixuan/BRIGHT" target="_blank">Code</a>
+          <a class="pub-link" href="https://github.com/ChenHongruixuan/BRIGHT" target="_blank">Dataset</a>
+          <a class="pub-link" href="./challenge.html" target="_blank">Challenge</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p1 p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/11303033" target="_blank">OpenEarthMap-SAR: A benchmark synthetic aperture radar dataset for global high-resolution land cover mapping</a></p>
+        <p class="pub-authors">J. Xia, <strong>H. Chen</strong>, C. Broni-Bediako, Y. Wei, J. Song, N. Yokoya</p>
+        <p class="pub-venue">IEEE Geoscience and Remote Sensing Magazine (<strong>GRSM</strong>), 2025</p>
+        <div class="pub-badges"><span class="badge">DFC 2025</span><span class="pillar-badge" data-pillar="p1">data</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/11303033" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/cliffbb/OpenEarthMap-SAR" target="_blank">Code</a>
+          <a class="pub-link" href="https://zenodo.org/records/14622047" target="_blank">Dataset</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.grss-ieee.org/technical-committees/image-analysis-and-data-fusion/?tab=data-fusion-contest" target="_blank">Report on the 2025 IEEE GRSS Data Fusion Contest: All-weather land cover and building damage mapping</a></p>
+        <p class="pub-authors">C. Persello, S. Prasad, U. Verma, G. Vivone, <strong>H. Chen</strong>, J. Xia, J. Song, C. Broni-Bediako, O. Dietrich, K. Schindler, N. Yokoya</p>
+        <p class="pub-venue">IEEE Geoscience and Remote Sensing Magazine (<strong>GRSM</strong>), 2025</p>
+        <div class="pub-badges"><span class="badge">Contest Report</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.grss-ieee.org/technical-committees/image-analysis-and-data-fusion/?tab=data-fusion-contest" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/11200000" target="_blank">Advancing weakly-supervised change detection in satellite images via adversarial class prompting</a></p>
+        <p class="pub-authors">Z. Zhao, C. Wu, D. Wang, <strong>H. Chen</strong>, C. Chen, Z. Zheng, B. Du, L. Zhang</p>
+        <p class="pub-venue">IEEE Transactions on Image Processing (<strong>TIP</strong>), 2025</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/11200000" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p1 p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0924271625003223" target="_blank">CGSL: Commonality graph structure learning for unsupervised multimodal change detection</a></p>
+        <p class="pub-authors">J. Xu, T. Liu, T. Lei, <strong>H. Chen</strong>, N. Yokoya, Z. Lv, M. Gong</p>
+        <p class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2025</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p1">data</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0924271625003223" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.grss-ieee.org/technical-committees/image-analysis-and-data-fusion/?tab=data-fusion-contest" target="_blank">2025 IEEE GRSS Data Fusion Contest: All-weather land cover and building damage mapping</a></p>
+        <p class="pub-authors">C. Persello, S. Prasad, U. Verma, G. Vivone, <strong>H. Chen</strong>, J. Xia, J. Song, C. Broni-Bediako, O. Dietrich, K. Schindler, N. Yokoya</p>
+        <p class="pub-venue">IEEE Geoscience and Remote Sensing Magazine (<strong>GRSM</strong>), 2025</p>
+        <div class="pub-badges"><span class="badge">Contest</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.grss-ieee.org/technical-committees/image-analysis-and-data-fusion/?tab=data-fusion-contest" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0924271625004885" target="_blank">A survey of sample-efficient deep learning for change detection in remote sensing: Tasks, strategies, and challenges</a></p>
+        <p class="pub-authors">L. Ding, D. Hong, M. Zhao, <strong>H. Chen</strong>, C. Li, J. Deng, N. Yokoya, L. Bruzzone, J. Chanussot</p>
+        <p class="pub-venue">IEEE Geoscience and Remote Sensing Magazine (<strong>GRSM</strong>), 2025</p>
+        <div class="pub-badges"><span class="badge">ESI Highly Cited</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0924271625004885" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0924271625000176" target="_blank">Plug-and-play DiSep: Separating dense instances for scene-to-pixel weakly-supervised change detection in high-resolution remote sensing images</a></p>
+        <p class="pub-authors">Z. Zhao, C. Wu, L. Ru, D. Wang, <strong>H. Chen</strong>, C. Chen</p>
+        <p class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2025</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S0924271625000176" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p2 pf">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10982376" target="_blank">HyperSIGMA: Hyperspectral intelligence comprehension foundation model</a></p>
+        <p class="pub-authors">D. Wang, M. Hu, Y. Jin, Y. Miao, J. Yang, Y. Xu, X. Qin, J. Ma, L. Sun, C. Li, C. Fu, <strong>H. Chen</strong>, C. Han, N. Yokoya, J. Zhang, M. Xu, L. Liu, L. Zhang, C. Wu, B. Du, D. Tao, L. Zhang</p>
+        <p class="pub-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (<strong>TPAMI</strong>), 2025</p>
+        <div class="pub-badges"><span class="badge badge-hot">ESI Hot Paper</span><span class="badge">ESI Highly Cited</span><span class="pillar-badge" data-pillar="p2">architecture</span><span class="pillar-badge" data-pillar="pf">foundation</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/10982376" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/WHU-Sigma/HyperSIGMA" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3 pf">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://github.com/Junjue-Wang/DisasterM3" target="_blank">DisasterM3: A remote sensing vision-language dataset for disaster damage assessment and response</a></p>
+        <p class="pub-authors">J. Wang, W. Xuan, H. Qi, Z. Liu, K. Liu, Y. Wu, <strong>H. Chen</strong>, J. Song, J. Xia, Z. Zheng, N. Yokoya</p>
+        <p class="pub-venue">Annual Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2025</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p3">labels</span><span class="pillar-badge" data-pillar="pf">foundation</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://github.com/Junjue-Wang/DisasterM3" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/Junjue-Wang/DisasterM3" target="_blank">Code</a>
+          <a class="pub-link" href="https://github.com/Junjue-Wang/DisasterM3" target="_blank">Dataset</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== 2024 ============== -->
+
+    <div class="pub-card" data-pillars="p2">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10565926" target="_blank">ChangeMamba: Remote sensing change detection with spatiotemporal state space model</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>*, J. Song*, C. Han, J. Xia, N. Yokoya</p>
+        <p class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing (<strong>TGRS</strong>), 2024</p>
+        <div class="pub-badges"><span class="badge badge-hot">ESI Hot Paper</span><span class="badge">ESI Highly Cited</span><span class="pillar-badge" data-pillar="p2">architecture</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/10565926" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/ChenHongruixuan/MambaCD" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p1 p2">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/10551264/" target="_blank">ObjFormer: Learning land-cover changes from paired OSM data and optical high-resolution imagery via object-guided transformer</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>, C. Lan, J. Song, C. Broni-Bediako, J. Xia, N. Yokoya</p>
+        <p class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing (<strong>TGRS</strong>), 2024</p>
+        <div class="pub-badges"><span class="badge">ESI Highly Cited</span><span class="pillar-badge" data-pillar="p1">data</span><span class="pillar-badge" data-pillar="p2">architecture</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10551264/" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/ChenHongruixuan/ObjFormer" target="_blank">Code</a>
+          <a class="pub-link" href="https://github.com/ChenHongruixuan/ObjFormer" target="_blank">Dataset</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p2">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10791930" target="_blank">UNet-like remote sensing change detection: A review of current models and research directions</a></p>
+        <p class="pub-authors">C. Wu, L. Zhang, B. Du, <strong>H. Chen</strong>, J. Wang, H. Zhong</p>
+        <p class="pub-venue">IEEE Geoscience and Remote Sensing Magazine (<strong>GRSM</strong>), 2024</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p2">architecture</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/10791930" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10437893" target="_blank">C2F-SemiCD: A coarse-to-fine semi-supervised change detection method based on consistency regularization in high-resolution remote sensing images</a></p>
+        <p class="pub-authors">C. Han, C. Wu, M. Hu, J. Li, <strong>H. Chen</strong></p>
+        <p class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing (<strong>TGRS</strong>), 2024</p>
+        <div class="pub-badges"><span class="badge">ESI Highly Cited</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/10437893" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10495037" target="_blank">Generalized few-shot semantic segmentation in remote sensing: Challenge and benchmark</a></p>
+        <p class="pub-authors">C. Broni-Bediako, J. Xia, J. Song, <strong>H. Chen</strong>, N. Yokoya</p>
+        <p class="pub-venue">IEEE Geoscience and Remote Sensing Letters (<strong>GRSL</strong>), 2024</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/10495037" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p2">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://onlinelibrary.wiley.com/doi/10.1002/aqc.4241" target="_blank">Deep learning for multilabel classification of coral reef conditions in the Indo-Pacific using underwater photo transect method</a></p>
+        <p class="pub-authors">X. Shao, <strong>H. Chen</strong>, K. Magson, J. Wang, J. Song, J. Chen, J. Sasaki</p>
+        <p class="pub-venue">Aquatic Conservation: Marine and Freshwater Ecosystems, 2024</p>
+        <div class="pub-badges"><span class="badge">Front Cover</span><span class="pillar-badge" data-pillar="p2">architecture</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://onlinelibrary.wiley.com/doi/10.1002/aqc.4241" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p2 p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://arxiv.org/abs/2406.18151" target="_blank">SynRS3D: A synthetic dataset for global 3D semantic understanding from monocular remote sensing imagery</a></p>
+        <p class="pub-authors">J. Song, <strong>H. Chen</strong>, W. Xuan, J. Xia, N. Yokoya</p>
+        <p class="pub-venue">Annual Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2024</p>
+        <div class="pub-badges"><span class="badge badge-hot">Spotlight</span><span class="pillar-badge" data-pillar="p2">architecture</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2406.18151" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/JTRNEO/SynRS3D" target="_blank">Code</a>
+          <a class="pub-link" href="https://huggingface.co/datasets/JTRNEO/SynRS3D" target="_blank">Dataset</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p1 p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10641836" target="_blank">Change detection between optical remote sensing imagery and map data via Segment Anything Model (SAM)</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>, J. Song, N. Yokoya</p>
+        <p class="pub-venue">IEEE International Geoscience and Remote Sensing Symposium (<strong>IGARSS</strong>), 2024</p>
+        <div class="pub-badges"><span class="badge">Oral</span><span class="pillar-badge" data-pillar="p1">data</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/10641836" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10641000" target="_blank">OpenEarthMap benchmark suite and its applications</a></p>
+        <p class="pub-authors">N. Yokoya, J. Xia, J. Song, C. Broni-Bediako, <strong>H. Chen</strong></p>
+        <p class="pub-venue">IEEE International Geoscience and Remote Sensing Symposium (<strong>IGARSS</strong>), 2024</p>
+        <div class="pub-badges"><span class="badge">Oral</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/10641000" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://openaccess.thecvf.com/content/WACV2024/html/Song_SyntheWorld_A_Large-Scale_Synthetic_Dataset_for_Land_Cover_Mapping_and_WACV_2024_paper.html" target="_blank">SyntheWorld: A large-scale synthetic dataset for land cover mapping and building change detection</a></p>
+        <p class="pub-authors">J. Song, <strong>H. Chen</strong>, N. Yokoya</p>
+        <p class="pub-venue">IEEE/CVF Winter Conference on Applications of Computer Vision (<strong>WACV</strong>), 2024</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://openaccess.thecvf.com/content/WACV2024/html/Song_SyntheWorld_A_Large-Scale_Synthetic_Dataset_for_Land_Cover_Mapping_and_WACV_2024_paper.html" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/JTRNEO/SyntheWorld" target="_blank">Dataset</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== 2023 ============== -->
+
+    <div class="pub-card" data-pillars="p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S092427162300309X" target="_blank">Exchange means change: An unsupervised single-temporal change detection framework based on intra- and inter-image patch exchange</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>, J. Song, C. Wu, B. Du, N. Yokoya</p>
+        <p class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2023</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S092427162300309X" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/ChenHongruixuan/I3PE" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p1 p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S092427162300062X" target="_blank">Fourier domain structural relationship analysis for unsupervised multimodal change detection</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>, M. Chini, N. Yokoya</p>
+        <p class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2023</p>
+        <div class="pub-badges"><span class="badge">ESI Highly Cited</span><span class="pillar-badge" data-pillar="p1">data</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S092427162300062X" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/ChenHongruixuan/FDMCD" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p2">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10268360" target="_blank">Change Guiding Network: Incorporating change prior to guide change detection in remote sensing imagery</a></p>
+        <p class="pub-authors">C. Han, C. Wu, H. Guo, M. Hu, J. Li, <strong>H. Chen</strong></p>
+        <p class="pub-venue">IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (<strong>JSTARS</strong>), 2023</p>
+        <div class="pub-badges"><span class="badge">ESI Highly Cited</span><span class="pillar-badge" data-pillar="p2">architecture</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/10268360" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p2">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/10093202" target="_blank">HANet: A hierarchical attention network for change detection with bitemporal very-high-resolution remote sensing images</a></p>
+        <p class="pub-authors">C. Han, C. Wu, H. Guo, M. Hu, <strong>H. Chen</strong></p>
+        <p class="pub-venue">IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (<strong>JSTARS</strong>), 2023</p>
+        <div class="pub-badges"><span class="badge">ESI Highly Cited</span><span class="pillar-badge" data-pillar="p2">architecture</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/10093202" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== 2022 ============== -->
+
+    <div class="pub-card" data-pillars="p1 p3">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/9984688" target="_blank">Unsupervised multimodal change detection based on structural relationship graph representational learning</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>, N. Yokoya, C. Wu, B. Du</p>
+        <p class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing (<strong>TGRS</strong>), 2022</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p1">data</span><span class="pillar-badge" data-pillar="p3">labels</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/9984688" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/ChenHongruixuan/SRGCAE" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card" data-pillars="p1 p2">
       <div class="pub-body">
         <p class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/9477493" target="_blank">Unsupervised change detection in multitemporal VHR images based on deep kernel PCA convolutional mapping network</a></p>
-        <p class="pub-authors">C. Wu, <strong>H. Chen</strong>, B. Du, and L. Zhang</p>
+        <p class="pub-authors">C. Wu, <strong>H. Chen</strong>, B. Du, L. Zhang</p>
         <p class="pub-venue">IEEE Transactions on Cybernetics (<strong>TCYB</strong>), 2022</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p1">data</span><span class="pillar-badge" data-pillar="p2">architecture</span></div>
         <div class="pub-links">
           <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/9477493" target="_blank">Paper</a>
           <a class="pub-link" href="https://github.com/ChenHongruixuan/KPCAMNet" target="_blank">Code</a>
-          <a class="pub-link" href="https://github.com/ChenHongruixuan/KPCAMNet" target="_blank">Data</a>
         </div>
       </div>
     </div>
 
+    <div class="pub-card" data-pillars="p2">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/9883685" target="_blank">Dual-tasks Siamese transformer framework for building damage assessment</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>, E. Nemni, S. Vallecorsa, X. Li, C. Wu, L. Bromley</p>
+        <p class="pub-venue">IEEE International Geoscience and Remote Sensing Symposium (<strong>IGARSS</strong>), 2022</p>
+        <div class="pub-badges"><span class="badge">Oral</span><span class="pillar-badge" data-pillar="p2">architecture</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/9883685" target="_blank">Paper</a>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- ── Research Area 3 ── -->
-  <section class="research-area" id="ai-cost">
-    <h2 class="research-area-title">Lowering Training Cost for EO-AI</h2>
-    <p class="research-area-desc">
-      Supervised deep learning for remote sensing is bottlenecked by the scarcity and expense of high-quality labeled data. By lowering the barrier to entry for AI-powered Earth observation, this line of work aims to democratize access to intelligent geospatial analysis, particularly for regions and hazard types that are underrepresented in existing benchmarks.
-    </p>
-    <p class="research-rep-label">Representative Publications</p>
-    <div class="pub-list">
+    <!-- ============== 2021 ============== -->
 
-      <!-- Paper 1 — fill in -->
-      <div class="pub-card">
-        <!-- <img class="pub-img" src="Files/bright_overall_linkedin.jpg" alt="BRIGHT" /> -->
-        <div class="pub-body">
-          <p class="pub-title"><a href="https://essd.copernicus.org/articles/17/6217/2025/essd-17-6217-2025.html" target="_blank">Bright: A globally distributed multimodal building damage assessment dataset with very-high-resolution for all-weather disaster response</a></p>
-          <p class="pub-authors"><strong>H. Chen</strong>, J. Song, O. Dietrich, C. Broni-Bediako, W. Xuan, J. Wang, X. Shao, Y. Wei, J. Xia, C. Lan, K. Schindler and N. Yokoya</p>
-          <p class="pub-venue">Earth System Science Data (<strong>ESSD</strong>), 2025</p>
-          <div class="pub-badges"><span class="badge badge-hot">IEEE Data Fusion Contest 2025</span></div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://essd.copernicus.org/articles/17/6217/2025/essd-17-6217-2025.html" target="_blank">Paper</a>
-            <a class="pub-link" href="https://github.com/ChenHongruixuan/BRIGHT" target="_blank">Code</a>
-            <a class="pub-link" href="https://github.com/ChenHongruixuan/BRIGHT" target="_blank">Data</a>
-            <a class="pub-link" href="https://www.grss-ieee.org/technical-committees/image-analysis-and-data-fusion/?tab=data-fusion-contest" target="_blank">Contest</a>
-          </div>
+    <div class="pub-card" data-pillars="p2">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0303243421001823" target="_blank">An investigation of traffic density changes inside Wuhan during the COVID-19 epidemic with GF-2 time-series images</a></p>
+        <p class="pub-authors">C. Wu, Y. Guo, H. Guo, J. Yuan, L. Ru, <strong>H. Chen</strong>, B. Du, L. Zhang</p>
+        <p class="pub-venue">International Journal of Applied Earth Observation and Geoinformation (<strong>JAG</strong>), 2021</p>
+        <div class="pub-badges"><span class="pillar-badge" data-pillar="p2">architecture</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S0303243421001823" target="_blank">Paper</a>
         </div>
       </div>
-
-      <div class="pub-card">
-        <!-- <img class="pub-img" src="Files/bright_overall_linkedin.jpg" alt="BRIGHT" /> -->
-        <div class="pub-body">
-          <p class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/11303033" target="_blank">OpenEarthMap-SAR: A benchmark synthetic aperture radar dataset for global high-resolution land cover mapping</a></p>
-          <p class="pub-authors">J. Xia, <strong>H. Chen</strong>, C. Broni-Bediako, Y. Wei, J. Song, N. Yokoya</p>
-          <p class="pub-venue">IEEE Geoscience and Remote Sensing Magazine (<strong>GRSM</strong>), 2025</p>
-          <div class="pub-badges"><span class="badge badge-hot">IEEE Data Fusion Contest 2025</span></div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/11303033" target="_blank">Paper</a>
-            <a class="pub-link" href="https://github.com/cliffbb/OpenEarthMap-SAR" target="_blank">Code</a>
-            <a class="pub-link" href="https://zenodo.org/records/14622047" target="_blank">Data</a>
-            <a class="pub-link" href="https://www.grss-ieee.org/technical-committees/image-analysis-and-data-fusion/?tab=data-fusion-contest" target="_blank">Contest</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub-card">
-        <!-- <img class="pub-img" src="Files/bright_overall_linkedin.jpg" alt="BRIGHT" /> -->
-        <div class="pub-body">
-          <p class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/11303033" target="_blank">SynRS3D: A synthetic dataset for global 3D semantic understanding from monocular remote sensing imagery</a></p>
-          <p class="pub-authors">J. Song, <strong>H. Chen</strong>, W. Xuan, J. Xia, N. Yokoya</p>
-          <p class="pub-venue">The Thirty-eighth Annual Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2024</p>
-          <div class="pub-badges"><span class="badge badge-hot">Spotlight Paper</span></div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://arxiv.org/abs/2406.18151" target="_blank">Paper</a>
-            <a class="pub-link" href="https://github.com/JTRNEO/SynRS3D" target="_blank">Code</a>
-            <a class="pub-link" href="https://huggingface.co/datasets/JTRNEO/SynRS3D" target="_blank">Data</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Paper 2 — fill in -->
-      <div class="pub-card">
-        <!-- <img class="pub-img" src="Files/I3PE.png" alt="I3PE" /> -->
-        <div class="pub-body">
-          <p class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S092427162300309X" target="_blank">Exchange means change: An unsupervised single-temporal change detection framework based on intra- and inter-image patch exchange</a></p>
-          <p class="pub-authors"><strong>H. Chen</strong>, J. Song, C. Wu, B. Du, and N. Yokoya</p>
-          <p class="pub-venue">ISPRS Journal of Photogrammetry and Remote Sensing, 2023</p>
-          <div class="pub-links">
-            <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S092427162300309X" target="_blank">Paper</a>
-            <a class="pub-link" href="https://github.com/ChenHongruixuan/I3PE" target="_blank">Code</a>
-            <a class="pub-link" href="https://github.com/ChenHongruixuan/I3PE" target="_blank">Data</a>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </section>
+
+    <!-- ============== 2020 ============== -->
+
+    <div class="pub-card" data-pillars="p1 p2">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/8937755" target="_blank">Change detection in multisource VHR images via deep Siamese convolutional multiple-layers recurrent neural network</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>, C. Wu, B. Du, L. Zhang, L. Wang</p>
+        <p class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing (<strong>TGRS</strong>), 2020</p>
+        <div class="pub-badges"><span class="badge">ESI Highly Cited</span><span class="pillar-badge" data-pillar="p1">data</span><span class="pillar-badge" data-pillar="p2">architecture</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/8937755" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/ChenHongruixuan/SiamCRNN" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== 2019 ============== -->
+
+    <div class="pub-card" data-pillars="p2">
+      <div class="pub-body">
+        <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/8896915" target="_blank">Deep Siamese multi-scale convolutional network for change detection in multi-temporal VHR images</a></p>
+        <p class="pub-authors"><strong>H. Chen</strong>, C. Wu, B. Du, L. Zhang</p>
+        <p class="pub-venue">International Workshop on the Analysis of Multitemporal Remote Sensing Images (<strong>MultiTemp</strong>), 2019</p>
+        <div class="pub-badges"><span class="badge">Oral</span><span class="pillar-badge" data-pillar="p2">architecture</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/8896915" target="_blank">Paper</a>
+          <a class="pub-link" href="https://github.com/ChenHongruixuan/DSMSCN" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /pub-list -->
+
+  <div class="filter-empty" id="filter-empty">No publications match the selected filter.</div>
+
+  <p class="scholar-link">
+    For the most current list with citation counts, see my <a href="https://scholar.google.com/citations?user=XOk4Cf0AAAAJ&hl=en" target="_blank">Google Scholar profile</a>.
+  </p>
 
 </div><!-- /container -->
 
-</body>
-</html>
+<!-- Back to top -->
+<div id="back_top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+<script>
+var btn = document.getElementById('back_top');
+window.addEventListener('scroll', function() {
+  if ((document.documentElement.scrollTop || document.body.scrollTop) > 400) {
+    btn.style.display = 'flex';
+  } else {
+    btn.style.display = 'none';
+  }
+});
+</script>
+
+<script>
+(function() {
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.pub-card[data-pillars]'));
+  var btns  = Array.prototype.slice.call(document.querySelectorAll('.pillar-btn[data-pillar]'));
+  var panes = Array.prototype.slice.call(document.querySelectorAll('.preview-pane[data-pane]'));
+  var meta  = document.getElementById('filter-meta');
+  var empty = document.getElementById('filter-empty');
+  var row   = document.querySelector('.pillar-row');
+  var preview = document.getElementById('pillar-preview');
+
+  var counts = { p1: 0, p2: 0, p3: 0, pf: 0, all: cards.length };
+  cards.forEach(function(c) {
+    (c.getAttribute('data-pillars') || '').split(/\s+/).forEach(function(p) {
+      if (counts.hasOwnProperty(p)) counts[p] += 1;
+    });
+  });
+
+  var activeFilter = 'all';
+
+  function setPreview(pillar) {
+    if (pillar === 'all') {
+      preview.hidden = true;
+      panes.forEach(function(p) { p.hidden = true; });
+    } else {
+      preview.hidden = false;
+      panes.forEach(function(p) { p.hidden = p.getAttribute('data-pane') !== pillar; });
+    }
+  }
+
+  function applyFilter(filter) {
+    activeFilter = filter;
+    var visible = 0;
+    cards.forEach(function(c) {
+      var tags = (c.getAttribute('data-pillars') || '').split(/\s+/);
+      var show = filter === 'all' || tags.indexOf(filter) !== -1;
+      c.classList.toggle('is-hidden', !show);
+      if (show) visible += 1;
+    });
+    btns.forEach(function(b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-pillar') === filter ? 'true' : 'false');
+    });
+    meta.textContent = visible + ' of ' + cards.length + ' shown';
+    empty.classList.toggle('is-shown', visible === 0);
+    setPreview(filter);
