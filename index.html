@@ -415,19 +415,28 @@ document.querySelectorAll('.email-protect').forEach(function(el) {
 
   var STEP = 8;
   var firstYear = items[0].getAttribute('data-year');
-  var visible = items.filter(function(li) {
+  var INITIAL = items.filter(function(li) {
     return li.getAttribute('data-year') === firstYear;
   }).length;
+  var visible = INITIAL;
 
   function render() {
     items.forEach(function(li, idx) {
       li.style.display = idx < visible ? '' : 'none';
     });
-    more.style.display = visible < items.length ? '' : 'none';
+    if (visible >= items.length) {
+      more.textContent = 'Show less';
+    } else {
+      more.textContent = 'Show more';
+    }
   }
 
   more.addEventListener('click', function() {
-    visible += STEP;
+    if (visible >= items.length) {
+      visible = INITIAL;
+    } else {
+      visible += STEP;
+    }
     render();
   });
 

@@ -676,3 +676,35 @@ window.addEventListener('scroll', function() {
     meta.textContent = visible + ' of ' + cards.length + ' shown';
     empty.classList.toggle('is-shown', visible === 0);
     setPreview(filter);
+    if (history.replaceState) {
+      history.replaceState(null, '', filter === 'all' ? location.pathname : '#' + filter);
+    }
+  }
+
+  btns.forEach(function(b) {
+    b.addEventListener('mouseenter', function() {
+      setPreview(b.getAttribute('data-pillar'));
+    });
+    b.addEventListener('focus', function() {
+      setPreview(b.getAttribute('data-pillar'));
+    });
+    b.addEventListener('click', function() {
+      applyFilter(b.getAttribute('data-pillar'));
+    });
+  });
+
+  row.addEventListener('mouseleave', function() {
+    setPreview(activeFilter);
+  });
+
+  var initial = (location.hash || '').replace('#', '');
+  if (['p1','p2','p3','pf'].indexOf(initial) !== -1) {
+    applyFilter(initial);
+  } else {
+    applyFilter('all');
+  }
+})();
+</script>
+
+</body>
+</html>
